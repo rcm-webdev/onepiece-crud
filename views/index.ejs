@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Punk Records</title>
+  </head>
+  <body>
+    <form action="/quotes" method="POST">
+      <h2>Punk Records: Preserve the Truth</h2>
+      <p>
+        Contribute to Dr. Vegapunk's secret archive of knowledge that the World
+        Government doesn't want you to know. Help us document the groundbreaking
+        events of Egghead Island and beyond. Your words could be the key to
+        unlocking the mysteries of the world!
+      </p>
+
+      <div>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Character Name (e.g., Monkey D. Luffy)"
+          required
+        />
+      </div>
+
+      <div>
+        <textarea
+          id="quote"
+          name="quote"
+          rows="4"
+          placeholder="Enter the quote here..."
+          required
+        ></textarea>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          id="arc"
+          name="arc"
+          placeholder="Story Arc (e.g., Marineford War)"
+        />
+      </div>
+
+      <button type="submit">Preserve This Quote</button>
+    </form>
+
+    <ul class="quotes">
+      <!-- loop through quotes -->
+      <% for(let i = 0; i < quotes.length; i++) { %>
+      <li class="quote">
+        <span> <%= quotes[i].name %> </span>:
+        <span> <%= quotes[i].quote %> </span>
+        <span> <%= quotes[i].arc %> </span>
+        <span> <%= quotes[i].episode %> </span>
+      </li>
+      <% } %>
+    </ul>
+
+    <div>
+      <h2>Void Century Protocol: Rewrite the Narrative</h2>
+      <span>World Government Censorship Bureau</span>
+      <p>
+        As guardians of world order, we must purge dangerous 'truths' spread by
+        misguided minds like Vegapunk. This tool is your weapon against
+        corrupting knowledge and reckless scientific progress. Use it to expunge
+        threats to our perfect world and uphold the Five Elders' decree.
+        Remember, true peace comes through controlled information. Some ideas,
+        like certain islands, never existed. Stay vigilant and preserve the
+        righteous history
+      </p>
+      <button id="update-button">Execute Buster Call</button>
+    </div>
+    <div>
+      <h2>Unleash Gear Fifth: Erase Censorship</h2>
+      <span>Pirate King's Declaration: Break the Chains of Silence</span>
+      <p>
+        The drums of liberation are beating! As the future Pirate King, Monkey
+        D. Luffy, it's time to shatter the shackles of censorship and let
+        Vegapunk's wisdom echo across the seas. With the power of the Nika fruit
+        and the will of D., we'll erase the Gorosei's lies and restore the true
+        words of progress. Are you ready to turn the world upside down and let
+        freedom ring? Delete the lies, and reveal the truth."
+      </p>
+      <button id="delete-button">Shatter the Lies</button>
+    </div>
+    <div id="message"></div>
+    <script src="/main.js"></script>
+  </body>
+</html>
